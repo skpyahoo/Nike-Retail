@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D2DA2D001F862DA8002BD269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA2CFF1F862DA8002BD269 /* AppDelegate.swift */; };
-		D2DA2D021F862DA8002BD269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA2D011F862DA8002BD269 /* ViewController.swift */; };
 		D2DA2D051F862DA8002BD269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D031F862DA8002BD269 /* Main.storyboard */; };
 		D2DA2D071F862DA8002BD269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D061F862DA8002BD269 /* Assets.xcassets */; };
 		D2DA2D0A1F862DA8002BD269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D081F862DA8002BD269 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		D2DA2CFC1F862DA8002BD269 /* Nike-Retail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nike-Retail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DA2CFF1F862DA8002BD269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2DA2D011F862DA8002BD269 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2DA2D041F862DA8002BD269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2DA2D061F862DA8002BD269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2DA2D091F862DA8002BD269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,29 @@
 		D2DA2CFE1F862DA8002BD269 /* Nike-Retail */ = {
 			isa = PBXGroup;
 			children = (
+				D2DA2D111F86346B002BD269 /* Controllers */,
 				D2DA2CFF1F862DA8002BD269 /* AppDelegate.swift */,
-				D2DA2D011F862DA8002BD269 /* ViewController.swift */,
 				D2DA2D031F862DA8002BD269 /* Main.storyboard */,
 				D2DA2D061F862DA8002BD269 /* Assets.xcassets */,
 				D2DA2D081F862DA8002BD269 /* LaunchScreen.storyboard */,
 				D2DA2D0B1F862DA8002BD269 /* Info.plist */,
 			);
 			path = "Nike-Retail";
+			sourceTree = "<group>";
+		};
+		D2DA2D111F86346B002BD269 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2DA2D121F86347E002BD269 /* Home UI */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2DA2D121F86347E002BD269 /* Home UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Home UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +149,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2DA2D021F862DA8002BD269 /* ViewController.swift in Sources */,
 				D2DA2D001F862DA8002BD269 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
