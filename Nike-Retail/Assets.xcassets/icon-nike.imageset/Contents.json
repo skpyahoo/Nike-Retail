@@ -12,20 +12,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "Nike-52.png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "Nike-50.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }

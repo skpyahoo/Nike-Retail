@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -44,13 +45,13 @@
         <!--Root View Controller-->
         <scene sceneID="Tsl-KG-S4Q">
             <objects>
-                <tableViewController id="TBm-AJ-29B" sceneMemberID="viewController">
+                <tableViewController id="TBm-AJ-29B" customClass="FeedTableViewController" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cDa-hF-SyO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="444" id="T1e-Np-0bs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedProductCell" rowHeight="444" id="T1e-Np-0bs" customClass="FeedProductCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T1e-Np-0bs" id="Hr8-n7-dA6">
@@ -87,6 +88,11 @@
                                         <constraint firstItem="RnZ-qC-S8a" firstAttribute="leading" secondItem="Hr8-n7-dA6" secondAttribute="leading" constant="12" id="zgy-W1-7Ow"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productImageView" destination="gNO-cI-u7D" id="suL-ac-5h4"/>
+                                    <outlet property="productNameLabel" destination="RnZ-qC-S8a" id="bMf-5p-UT8"/>
+                                    <outlet property="productPriceLabel" destination="S2H-Md-qny" id="JN5-gD-w4X"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -103,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="253.59999999999999" y="-1021.4392803598201"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Product DetailTVC-->
         <scene sceneID="ON6-eU-U3k">
             <objects>
-                <tableViewController id="TN3-da-mqH" sceneMemberID="viewController">
+                <tableViewController id="TN3-da-mqH" customClass="ProductDetailTVC" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eSi-5x-hAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,10 +120,24 @@
                         <view key="tableHeaderView" contentMode="scaleToFill" id="o5v-bq-g3K">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrV-bk-WzW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <connections>
+                                        <segue destination="gNx-aP-4Fm" kind="embed" id="aXh-v4-0jQ"/>
+                                    </connections>
+                                </containerView>
+                            </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="FrV-bk-WzW" secondAttribute="trailing" id="M9j-cb-OnL"/>
+                                <constraint firstAttribute="bottom" secondItem="FrV-bk-WzW" secondAttribute="bottom" id="hBM-BE-dHc"/>
+                                <constraint firstItem="FrV-bk-WzW" firstAttribute="top" secondItem="o5v-bq-g3K" secondAttribute="top" id="jVE-Iy-fAd"/>
+                                <constraint firstItem="FrV-bk-WzW" firstAttribute="leading" secondItem="o5v-bq-g3K" secondAttribute="leading" id="nuB-sN-8tW"/>
+                            </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="173" id="fWh-0S-vC6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailCell" rowHeight="173" id="fWh-0S-vC6" customClass="ProductDetailCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="403" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWh-0S-vC6" id="GeX-4Q-rrB">
@@ -147,8 +167,12 @@
                                         <constraint firstItem="iPl-lw-ZNZ" firstAttribute="leading" secondItem="GeX-4Q-rrB" secondAttribute="leading" constant="24" id="kMw-UR-EN6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productDescriptionLabel" destination="iPl-lw-ZNZ" id="Ohs-aE-Nrf"/>
+                                    <outlet property="productNameLabel" destination="ohO-nC-8VP" id="FzC-1F-6Rx"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="DrT-sz-upw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyButtonCell" rowHeight="65" id="DrT-sz-upw" customClass="BuyButtonCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="576" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DrT-sz-upw" id="ROU-wI-gtP">
@@ -171,8 +195,11 @@
                                         <constraint firstAttribute="trailing" secondItem="BpB-2m-ogC" secondAttribute="trailing" constant="12" id="ypD-dD-Df6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buyButton" destination="BpB-2m-ogC" id="FNR-yp-KNz"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="53" id="e4v-lQ-BB9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShowProductDetailCell" rowHeight="53" id="e4v-lQ-BB9">
                                 <rect key="frame" x="0.0" y="641" width="375" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e4v-lQ-BB9" id="dQL-8y-E6c">
@@ -224,6 +251,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWd-7K-pv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="959.20000000000005" y="-1019.1904047976013"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="72V-ir-GVY">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gNx-aP-4Fm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhw-L8-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="-1252"/>
+        </scene>
+        <!--Product ImageVC-->
+        <scene sceneID="0nj-yN-N6D">
+            <objects>
+                <viewController storyboardIdentifier="ProductImageVC" id="j9k-19-m3t" customClass="ProductImageVC" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xm4-xH-ftP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t1" translatesAutoresizingMaskIntoConstraints="NO" id="p1O-px-9jW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p1O-px-9jW" firstAttribute="trailing" secondItem="Y8M-oi-1Ny" secondAttribute="trailing" id="2SJ-z6-Jj2"/>
+                            <constraint firstItem="p1O-px-9jW" firstAttribute="top" secondItem="Xm4-xH-ftP" secondAttribute="top" id="5WN-yE-J4v"/>
+                            <constraint firstItem="p1O-px-9jW" firstAttribute="bottom" secondItem="Y8M-oi-1Ny" secondAttribute="bottom" id="Uut-am-FIT"/>
+                            <constraint firstItem="p1O-px-9jW" firstAttribute="leading" secondItem="Y8M-oi-1Ny" secondAttribute="leading" id="bWI-1s-0Q4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y8M-oi-1Ny"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="p1O-px-9jW" id="wZe-CC-LLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZx-tI-ukc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362.4000000000001" y="-1204.047976011994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4gt-MI-idc">
@@ -926,5 +990,6 @@
         <image name="icon-nike-filled" width="25" height="25"/>
         <image name="icon-plus" width="25" height="25"/>
         <image name="s1" width="1242" height="1242"/>
+        <image name="t1" width="1242" height="1242"/>
     </resources>
 </document>
