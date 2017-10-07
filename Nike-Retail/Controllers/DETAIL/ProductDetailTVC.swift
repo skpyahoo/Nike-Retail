@@ -10,6 +10,7 @@ import UIKit
 
 class ProductDetailTVC: UITableViewController {
     
+    @IBOutlet var productImagesHeaderView: ProductImagesHeaderView!
     var product: Product!
     
     struct Storyboard {
@@ -83,7 +84,18 @@ class ProductDetailTVC: UITableViewController {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowProductImagesPageVC"
+        {
+            if let imagesPageVC = segue.destination  as? ProductImagesPageVC
+            {
+                imagesPageVC.images = product.images
+                
+                imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
+            }
+        }
+    }
    
 
 }

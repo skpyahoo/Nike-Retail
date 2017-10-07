@@ -117,24 +117,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="o5v-bq-g3K">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="o5v-bq-g3K" customClass="ProductImagesHeaderView" customModule="Nike_Retail" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrV-bk-WzW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <connections>
-                                        <segue destination="gNx-aP-4Fm" kind="embed" id="aXh-v4-0jQ"/>
+                                        <segue destination="gNx-aP-4Fm" kind="embed" identifier="ShowProductImagesPageVC" id="aXh-v4-0jQ"/>
                                     </connections>
                                 </containerView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1BE-2a-hEo">
+                                    <rect key="frame" x="168" y="338" width="39" height="37"/>
+                                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="pageControl:" destination="J5L-oG-nat" eventType="valueChanged" id="u2e-Cp-5gK"/>
+                                    </connections>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="1BE-2a-hEo" firstAttribute="centerX" secondItem="o5v-bq-g3K" secondAttribute="centerX" id="LUO-T0-4ED"/>
                                 <constraint firstAttribute="trailing" secondItem="FrV-bk-WzW" secondAttribute="trailing" id="M9j-cb-OnL"/>
                                 <constraint firstAttribute="bottom" secondItem="FrV-bk-WzW" secondAttribute="bottom" id="hBM-BE-dHc"/>
                                 <constraint firstItem="FrV-bk-WzW" firstAttribute="top" secondItem="o5v-bq-g3K" secondAttribute="top" id="jVE-Iy-fAd"/>
                                 <constraint firstItem="FrV-bk-WzW" firstAttribute="leading" secondItem="o5v-bq-g3K" secondAttribute="leading" id="nuB-sN-8tW"/>
+                                <constraint firstAttribute="bottom" secondItem="1BE-2a-hEo" secondAttribute="bottom" id="wHq-SN-a1P"/>
                             </constraints>
+                            <connections>
+                                <outlet property="pageControl" destination="1BE-2a-hEo" id="PDF-5n-Vvc"/>
+                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailCell" rowHeight="173" id="fWh-0S-vC6" customClass="ProductDetailCell" customModule="Nike_Retail" customModuleProvider="target">
@@ -247,15 +260,19 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="1200"/>
+                    <connections>
+                        <outlet property="productImagesHeaderView" destination="o5v-bq-g3K" id="T6p-hN-9Mb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWd-7K-pv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="J5L-oG-nat" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="959.20000000000005" y="-1019.1904047976013"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Product Images PageVC-->
         <scene sceneID="72V-ir-GVY">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gNx-aP-4Fm" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gNx-aP-4Fm" customClass="ProductImagesPageVC" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhw-L8-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1676" y="-1252"/>
@@ -268,7 +285,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t1" translatesAutoresizingMaskIntoConstraints="NO" id="p1O-px-9jW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t1" translatesAutoresizingMaskIntoConstraints="NO" id="p1O-px-9jW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>

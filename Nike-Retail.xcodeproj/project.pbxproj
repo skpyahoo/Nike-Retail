@@ -19,6 +19,7 @@
 		D2DA2D051F862DA8002BD269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D031F862DA8002BD269 /* Main.storyboard */; };
 		D2DA2D071F862DA8002BD269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D061F862DA8002BD269 /* Assets.xcassets */; };
 		D2DA2D0A1F862DA8002BD269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D081F862DA8002BD269 /* LaunchScreen.storyboard */; };
+		D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D2DA2D061F862DA8002BD269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2DA2D091F862DA8002BD269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2DA2D0B1F862DA8002BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		D250B05F1F87B632006B7E1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2F469501F87F5E10034D20B /* Detail Cell */,
 				D250B0661F87D0FC006B7E1F /* Feed Cell */,
 			);
 			path = View;
@@ -69,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				D250B0601F87B66D006B7E1F /* FeedProductCell.swift */,
-				D250B0621F87D068006B7E1F /* ProductDetailCell.swift */,
-				D250B0641F87D085006B7E1F /* BuyButtonCell.swift */,
 			);
 			path = "Feed Cell";
 			sourceTree = "<group>";
@@ -131,6 +132,16 @@
 				D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */,
 			);
 			path = FEED;
+			sourceTree = "<group>";
+		};
+		D2F469501F87F5E10034D20B /* Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D250B0621F87D068006B7E1F /* ProductDetailCell.swift */,
+				D250B0641F87D085006B7E1F /* BuyButtonCell.swift */,
+				D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */,
+			);
+			path = "Detail Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				D250B06B1F87E425006B7E1F /* ProductImageVC.swift in Sources */,
 				D250B06D1F87E50B006B7E1F /* ProductImagesPageVC.swift in Sources */,
 				D250B0681F87D333006B7E1F /* ProductDetailTVC.swift in Sources */,
+				D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */,
 				D250B0651F87D085006B7E1F /* BuyButtonCell.swift in Sources */,
 				D250B05B1F87A3AD006B7E1F /* Product.swift in Sources */,
 			);
