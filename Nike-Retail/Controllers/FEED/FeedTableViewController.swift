@@ -11,11 +11,12 @@ import UIKit
 class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
+    private var selectedProduct: Product?
     
     struct Storyboard {
         
         static let feedProductCell = "FeedProductCell"
-        
+        static let showProductDetail = "ShowProductDetail"
     }
 
     override func viewDidLoad() {
@@ -71,6 +72,21 @@ class FeedTableViewController: UITableViewController {
         
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedProduct = products?[indexPath.row]
+        performSegue(withIdentifier: Storyboard.showProductDetail, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Storyboard.showProductDetail {
+            if let productDetailTVC = segue.destination as? ProductDetailTVC {
+                productDetailTVC.product = selectedProduct
+            }
+        }
     }
     
 

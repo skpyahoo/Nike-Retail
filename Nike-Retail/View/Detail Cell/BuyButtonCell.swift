@@ -15,7 +15,7 @@ class BuyButtonCell: UITableViewCell {
     var product: Product! {
         
         didSet {
-            buyButton.setTitle("BUY FOR ₹\(product?.price!)", for: .normal)
+            buyButton.setTitle("BUY FOR ₹\(product!.price!)", for: .normal)
         }
     }
     

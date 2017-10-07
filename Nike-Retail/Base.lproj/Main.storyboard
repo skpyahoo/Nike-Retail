@@ -102,7 +102,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="OaD-gs-yTi"/>
                     <connections>
-                        <segue destination="TN3-da-mqH" kind="show" id="BBF-mO-Xn5"/>
+                        <segue destination="TN3-da-mqH" kind="show" identifier="ShowProductDetail" id="BBF-mO-Xn5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fth-s4-0zG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,7 +233,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="375" id="8SU-5K-Mb3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuggestionTableCell" rowHeight="375" id="8SU-5K-Mb3" customClass="SuggestionTableCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="694" width="375" height="375"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8SU-5K-Mb3" id="aIC-Qa-qBy">
@@ -246,12 +246,53 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S96-F8-TSj">
+                                            <rect key="frame" x="0.0" y="69" width="375" height="305.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="E7O-Qc-9TR">
+                                                <size key="itemSize" width="185" height="185"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuggestionCollectionViewCell" id="Tj0-d8-hrt" customClass="SuggestionCollectionViewCell" customModule="Nike_Retail" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s1" translatesAutoresizingMaskIntoConstraints="NO" id="zFT-Nn-G2q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="zFT-Nn-G2q" secondAttribute="trailing" id="6ai-cs-jYi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zFT-Nn-G2q" secondAttribute="bottom" id="AQ4-O9-E5h"/>
+                                                        <constraint firstItem="zFT-Nn-G2q" firstAttribute="top" secondItem="Tj0-d8-hrt" secondAttribute="top" id="jCh-11-H2O"/>
+                                                        <constraint firstItem="zFT-Nn-G2q" firstAttribute="leading" secondItem="Tj0-d8-hrt" secondAttribute="leading" id="kLc-j5-hCV"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="imageView" destination="zFT-Nn-G2q" id="WDo-Zz-C78"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="S96-F8-TSj" secondAttribute="trailing" id="1Dz-4s-5U1"/>
                                         <constraint firstItem="xmL-HR-y8B" firstAttribute="centerX" secondItem="aIC-Qa-qBy" secondAttribute="centerX" id="9Lh-G0-3WD"/>
+                                        <constraint firstItem="S96-F8-TSj" firstAttribute="top" secondItem="xmL-HR-y8B" secondAttribute="bottom" constant="24" id="CG4-zX-kXm"/>
+                                        <constraint firstItem="S96-F8-TSj" firstAttribute="leading" secondItem="aIC-Qa-qBy" secondAttribute="leading" id="glM-24-2Zw"/>
+                                        <constraint firstAttribute="bottom" secondItem="S96-F8-TSj" secondAttribute="bottom" id="h6P-fw-7vD"/>
                                         <constraint firstItem="xmL-HR-y8B" firstAttribute="top" secondItem="aIC-Qa-qBy" secondAttribute="top" constant="24" id="xsa-qn-goY"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="S96-F8-TSj" id="Ea7-MP-YJ4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

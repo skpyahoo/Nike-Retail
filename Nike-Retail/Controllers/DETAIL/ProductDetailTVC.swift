@@ -18,6 +18,8 @@ class ProductDetailTVC: UITableViewController {
         static let productDetailCell = "ProductDetailCell"
         static let buyButtonCell = "BuyButtonCell"
         static let showProductDetailCell = "ShowProductDetailCell"
+        static let suggestionTableCell = "SuggestionTableCell"
+        static let showImagesPageVC = "ShowProductImagesPageVC"
     }
 
     override func viewDidLoad() {
@@ -79,14 +81,52 @@ class ProductDetailTVC: UITableViewController {
         }
         else
         {
-            return extractedFunc()
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.suggestionTableCell, for: indexPath) as! SuggestionTableCell
+            //cell.selectionStyle = .none
+            
+            return cell
             
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 3
+        {
+            return tableView.bounds.width + 68
+        }
+        else
+        {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
+    
+    //Mark: - UITabeleViewDelegate
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 3
+        {
+            if let cell = cell as? SuggestionTableCell
+            {
+                cell.collectionView.delegate = self
+                cell.collectionView.dataSource = self
+                cell.collectionView.reloadData()
+                cell.collectionView.isScrollEnabled = false
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ShowProductImagesPageVC"
+        if segue.identifier == Storyboard.showImagesPageVC
         {
             if let imagesPageVC = segue.destination  as? ProductImagesPageVC
             {
@@ -99,3 +139,63 @@ class ProductDetailTVC: UITableViewController {
    
 
 }
+
+
+//MARK: - UICollectionViewDataSource
+extension ProductDetailTVC : UICollectionViewDataSource
+{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionCollectionViewCell", for: indexPath) as! SuggestionCollectionViewCell
+        
+        let products = Product.fetchProducts()
+        cell.image = products[indexPath.item].images?.first
+        
+        return cell
+    }
+    
+}
+
+
+//MARK: - UICollectionViewDelegate
+
+extension ProductDetailTVC : UICollectionViewDelegate
+{
+    
+}
+
+
+//MARK: - UICOLLECTIONVIEWDELEGATEFLOWLAYOUT
+
+extension ProductDetailTVC : UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout
+        {
+            layout.minimumLineSpacing = 5.0
+            layout.minimumInteritemSpacing = 2.5
+            
+            let itemWidth = (collectionView.bounds.width - 5.0) / 2.0
+            
+            return CGSize(width: itemWidth, height: itemWidth)
+        }
+        
+        return CGSize.zero
+    }
+}
+
+
+
+
+
+
