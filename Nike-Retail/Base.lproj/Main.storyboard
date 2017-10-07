@@ -398,13 +398,13 @@
         <!--SHOPPING BAG-->
         <scene sceneID="A8B-Om-LpS">
             <objects>
-                <tableViewController id="ez0-CZ-KTe" sceneMemberID="viewController">
+                <tableViewController id="ez0-CZ-KTe" customClass="ShoppingBagTVC" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GGV-yK-oED">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="zJZ-dQ-Wzc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NumberOfItemsCell" rowHeight="70" id="zJZ-dQ-Wzc" customClass="NumberOfItemsCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zJZ-dQ-Wzc" id="Hg1-ES-7dI">
@@ -425,8 +425,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="numberOfItemsLabel" destination="nBM-Ed-4qM" id="fgo-4P-olp"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="XP1-Th-sbx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCartItemCell" rowHeight="145" id="XP1-Th-sbx" customClass="ShoppingCartItemCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="98" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XP1-Th-sbx" id="zqB-21-IPd">
@@ -462,14 +465,14 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹3500.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peq-dK-D3L">
-                                                    <rect key="frame" x="0.0" y="53" width="44.5" height="11.5"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="53" width="51.5" height="10.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-3l-Xoz">
-                                                    <rect key="frame" x="0.0" y="67.5" width="45" height="29"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="66.5" width="49" height="30"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Remove">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -482,14 +485,21 @@
                                         <constraint firstItem="myn-Ki-lI7" firstAttribute="leading" secondItem="NCr-8W-4He" secondAttribute="trailing" constant="12" id="3M4-hg-99a"/>
                                         <constraint firstAttribute="trailing" secondItem="myn-Ki-lI7" secondAttribute="trailing" constant="24" id="D6P-2l-wXy"/>
                                         <constraint firstAttribute="bottom" secondItem="myn-Ki-lI7" secondAttribute="bottom" constant="24" id="Q2Z-PV-3Z9"/>
+                                        <constraint firstAttribute="bottom" secondItem="NCr-8W-4He" secondAttribute="bottom" constant="24" id="cFb-OH-mWX"/>
                                         <constraint firstItem="myn-Ki-lI7" firstAttribute="top" secondItem="zqB-21-IPd" secondAttribute="top" constant="24" id="hc1-2c-fnD"/>
                                         <constraint firstItem="NCr-8W-4He" firstAttribute="top" secondItem="zqB-21-IPd" secondAttribute="top" constant="24" id="i1b-60-hxy"/>
                                         <constraint firstItem="NCr-8W-4He" firstAttribute="leading" secondItem="zqB-21-IPd" secondAttribute="leading" constant="24" id="leq-0Z-aSf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="priceLabel" destination="Peq-dK-D3L" id="FYm-LB-FGB"/>
+                                    <outlet property="productImageView" destination="NCr-8W-4He" id="K2e-Vu-TTq"/>
+                                    <outlet property="productNameLabel" destination="l69-ti-TQc" id="FKG-TU-rmb"/>
+                                    <outlet property="removeButton" destination="BsS-3l-Xoz" id="neR-J1-CDy"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="KA2-6j-P5Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartDetailCell" rowHeight="124" id="KA2-6j-P5Y">
                                 <rect key="frame" x="0.0" y="243" width="375" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KA2-6j-P5Y" id="KN9-hw-2jX">
@@ -570,7 +580,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="SHi-YX-eb5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="totalCell" rowHeight="73" id="SHi-YX-eb5">
                                 <rect key="frame" x="0.0" y="367" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SHi-YX-eb5" id="Frh-7C-1iT">
@@ -604,7 +614,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="Wm4-wH-B6y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkoutButtonCell" rowHeight="65" id="Wm4-wH-B6y">
                                 <rect key="frame" x="0.0" y="440" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wm4-wH-B6y" id="Cyn-R3-Hj2">
