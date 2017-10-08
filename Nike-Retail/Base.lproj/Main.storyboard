@@ -744,13 +744,13 @@
         <!--CHECKOUT-->
         <scene sceneID="yjz-U0-fBG">
             <objects>
-                <tableViewController id="SJp-64-adY" sceneMemberID="viewController">
+                <tableViewController id="SJp-64-adY" customClass="CheckoutTVC" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cx2-Hr-yA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Jkr-8z-qlz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="billingCell" rowHeight="70" id="Jkr-8z-qlz">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jkr-8z-qlz" id="mTH-l3-tCM">
@@ -772,7 +772,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="407" id="1hB-6m-Iz8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreditCardInformationCell" rowHeight="407" id="1hB-6m-Iz8" customClass="CreditCardInformationCell" customModule="Nike_Retail" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="98" width="375" height="407"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1hB-6m-Iz8" id="fP6-aj-oo0">
@@ -893,8 +893,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="cardCVVTextField" destination="aOL-Aj-1MA" id="UD0-Eb-0z6"/>
+                                    <outlet property="cardExpiaryDateTextField" destination="kFY-X1-FnQ" id="fxm-On-CSQ"/>
+                                    <outlet property="creditCardTextField" destination="PyB-mh-h8u" id="zzO-1W-Wjo"/>
+                                    <outlet property="emailAddressTextField" destination="lsq-QO-eaM" id="p0H-KS-cyT"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="tT4-Jh-jBD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartDetailCell" rowHeight="124" id="tT4-Jh-jBD">
                                 <rect key="frame" x="0.0" y="505" width="375" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tT4-Jh-jBD" id="lQI-AO-CIS">
@@ -975,7 +981,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="ybF-3O-US7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="totalCell" rowHeight="73" id="ybF-3O-US7">
                                 <rect key="frame" x="0.0" y="629" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ybF-3O-US7" id="SpF-OQ-s83">
@@ -1009,7 +1015,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="1zq-oc-7ON">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="submitButtonCell" rowHeight="65" id="1zq-oc-7ON">
                                 <rect key="frame" x="0.0" y="702" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1zq-oc-7ON" id="yyO-FB-CJi">

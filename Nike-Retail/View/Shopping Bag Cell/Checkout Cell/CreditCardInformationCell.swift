@@ -10,6 +10,10 @@ import UIKit
 
 class CreditCardInformationCell: UITableViewCell {
 
+    @IBOutlet var emailAddressTextField: UITextField!
+    @IBOutlet var creditCardTextField: UITextField!
+    @IBOutlet var cardExpiaryDateTextField: UITextField!
+    @IBOutlet var cardCVVTextField: UITextField!
     
 
 }

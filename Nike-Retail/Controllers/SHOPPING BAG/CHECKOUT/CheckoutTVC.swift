@@ -9,15 +9,23 @@
 import UIKit
 
 class CheckoutTVC: UITableViewController {
+    
+    struct Storyboard {
+        
+        static let creditCardInformationCell = "CreditCardInformationCell"
+        static let cartDetailCell = "cartDetailCell"
+        static let totalCell = "totalCell"
+        static let submitButtonCell = "submitButtonCell"
+        static let billingcell = "billingCell"
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     
@@ -26,23 +34,61 @@ class CheckoutTVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 5
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        if indexPath.row == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.billingcell, for: indexPath)
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        }
+        else if indexPath.row == 1
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.creditCardInformationCell, for: indexPath) as! CreditCardInformationCell
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        }
+        else if indexPath.row == 2
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartDetailCell, for: indexPath)
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        }
+        else if indexPath.row == 3
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.totalCell, for: indexPath)
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.submitButtonCell, for: indexPath)
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        }
+        
+        
     }
-    */
+    
 
     
 
