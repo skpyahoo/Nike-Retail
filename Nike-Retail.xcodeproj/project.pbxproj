@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2CD01D9F9F0D049D8C6FD7 /* Pods_Nike_Retail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */; };
 		D250B05B1F87A3AD006B7E1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05A1F87A3AD006B7E1F /* Product.swift */; };
 		D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */; };
 		D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B0601F87B66D006B7E1F /* FeedProductCell.swift */; };
@@ -26,10 +27,14 @@
 		D2DA2D0A1F862DA8002BD269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D081F862DA8002BD269 /* LaunchScreen.storyboard */; };
 		D2DBC6C11F89491500E915BD /* CheckoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */; };
 		D2DBC6C41F89496400E915BD /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */; };
+		D2E2527D1F8A5A6200F4A139 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */; };
 		D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30EAB3A9A8314B701F9D1566 /* Pods-Nike-Retail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nike-Retail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail.debug.xcconfig"; sourceTree = "<group>"; };
+		A71EADA5982CD82C3050062B /* Pods-Nike-Retail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nike-Retail.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail.release.xcconfig"; sourceTree = "<group>"; };
+		BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nike_Retail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D250B05A1F87A3AD006B7E1F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		D250B0601F87B66D006B7E1F /* FeedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductCell.swift; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		D2DA2D0B1F862DA8002BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTVC.swift; sourceTree = "<group>"; };
 		D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
+		D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,12 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2CD01D9F9F0D049D8C6FD7 /* Pods_Nike_Retail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279A63427490F86F04FD82DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30EAB3A9A8314B701F9D1566 /* Pods-Nike-Retail.debug.xcconfig */,
+				A71EADA5982CD82C3050062B /* Pods-Nike-Retail.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		973B5559478F53E6DFA21377 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D250B0591F87A394006B7E1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +157,8 @@
 			children = (
 				D2DA2CFE1F862DA8002BD269 /* Nike-Retail */,
 				D2DA2CFD1F862DA8002BD269 /* Products */,
+				973B5559478F53E6DFA21377 /* Frameworks */,
+				279A63427490F86F04FD82DA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +173,7 @@
 		D2DA2CFE1F862DA8002BD269 /* Nike-Retail */ = {
 			isa = PBXGroup;
 			children = (
+				D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */,
 				D250B0591F87A394006B7E1F /* Model */,
 				D250B05F1F87B632006B7E1F /* View */,
 				D2DA2D111F86346B002BD269 /* Controllers */,
@@ -212,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2DA2D0E1F862DA8002BD269 /* Build configuration list for PBXNativeTarget "Nike-Retail" */;
 			buildPhases = (
+				AF34837BE1BF0CF5F2478641 /* [CP] Check Pods Manifest.lock */,
 				D2DA2CF81F862DA8002BD269 /* Sources */,
 				D2DA2CF91F862DA8002BD269 /* Frameworks */,
 				D2DA2CFA1F862DA8002BD269 /* Resources */,
+				D8E1447194D3A0EAC852AED7 /* [CP] Embed Pods Frameworks */,
+				E968FBC4368AA61B7E63C487 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,12 +295,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2DA2D0A1F862DA8002BD269 /* LaunchScreen.storyboard in Resources */,
+				D2E2527D1F8A5A6200F4A139 /* GoogleService-Info.plist in Resources */,
 				D2DA2D071F862DA8002BD269 /* Assets.xcassets in Resources */,
 				D2DA2D051F862DA8002BD269 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF34837BE1BF0CF5F2478641 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8E1447194D3A0EAC852AED7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E968FBC4368AA61B7E63C487 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2DA2CF81F862DA8002BD269 /* Sources */ = {
@@ -428,6 +507,7 @@
 		};
 		D2DA2D0F1F862DA8002BD269 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30EAB3A9A8314B701F9D1566 /* Pods-Nike-Retail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +523,7 @@
 		};
 		D2DA2D101F862DA8002BD269 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71EADA5982CD82C3050062B /* Pods-Nike-Retail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

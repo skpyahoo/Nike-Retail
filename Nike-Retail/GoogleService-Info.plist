@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>537101857627-nl1re88j7953didkrnkchi3f3ulbj359.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.537101857627-nl1re88j7953didkrnkchi3f3ulbj359</string>
+	<key>API_KEY</key>
+	<string>AIzaSyChkKdGRVWrAUd7UzZ8zEJU7KoSiQz68qk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>537101857627</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sagar.Nike-Retail</string>
+	<key>PROJECT_ID</key>
+	<string>nike-d4beb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nike-d4beb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:537101857627:ios:311e0b08c5dd4df6</string>
+	<key>DATABASE_URL</key>
+	<string>https://nike-d4beb.firebaseio.com</string>
+</dict>
+</plist>

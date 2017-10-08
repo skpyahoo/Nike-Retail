@@ -13,8 +13,8 @@ class CheckoutTVC: UITableViewController {
     struct Storyboard {
         
         static let creditCardInformationCell = "CreditCardInformationCell"
-        static let cartDetailCell = "cartDetailCell"
-        static let totalCell = "totalCell"
+        static let cartDetailCell = "cartDetailCell"            // cell 2
+        static let cartTotalCell = "cartTotalCell"
         static let submitButtonCell = "submitButtonCell"
         static let billingcell = "billingCell"
         
@@ -44,50 +44,33 @@ class CheckoutTVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ 
         
-        if indexPath.row == 0
-        {
+        switch indexPath.row {
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.billingcell, for: indexPath)
-            
-            cell.selectionStyle = .none
             return cell
             
-        }
-        else if indexPath.row == 1
-        {
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.creditCardInformationCell, for: indexPath) as! CreditCardInformationCell
-            
-            cell.selectionStyle = .none
             return cell
             
-        }
-        else if indexPath.row == 2
-        {
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartDetailCell, for: indexPath)
-            
-            cell.selectionStyle = .none
             return cell
             
-        }
-        else if indexPath.row == 3
-        {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.totalCell, for: indexPath)
-            
-            cell.selectionStyle = .none
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cartTotalCell, for: indexPath)
             return cell
             
-        }
-        else
-        {
+        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.submitButtonCell, for: indexPath)
-            
-            cell.selectionStyle = .none
             return cell
             
+        default: return UITableViewCell()
         }
         
-        
-    }
+   }
     
 
     
