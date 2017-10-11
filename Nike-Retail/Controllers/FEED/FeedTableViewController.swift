@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedTableViewController: UITableViewController {
     
@@ -22,12 +23,36 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Auth.auth().currentUser == nil
+        {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+                
+            }
+            return
+        }
+        
         navigationItem.title = "FEED"
         fetchProducts()
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser == nil
+        {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+                
+            }
+            return
+        }
+        
     }
     
     func fetchProducts()

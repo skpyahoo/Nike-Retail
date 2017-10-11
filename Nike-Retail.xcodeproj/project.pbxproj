@@ -28,6 +28,12 @@
 		D2DBC6C11F89491500E915BD /* CheckoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */; };
 		D2DBC6C41F89496400E915BD /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */; };
 		D2E2527D1F8A5A6200F4A139 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */; };
+		D2ECB6981F8E2CC500210FD9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6971F8E2CC500210FD9 /* DataService.swift */; };
+		D2ECB69A1F8E2E8D00210FD9 /* FIRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6991F8E2E8D00210FD9 /* FIRImage.swift */; };
+		D2ECB69C1F8E33A100210FD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB69B1F8E33A100210FD9 /* User.swift */; };
+		D2ECB69F1F8E543C00210FD9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB69E1F8E543C00210FD9 /* SignupViewController.swift */; };
+		D2ECB6A11F8E589900210FD9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6A01F8E589900210FD9 /* RoundButton.swift */; };
+		D2ECB6A31F8E633D00210FD9 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6A21F8E633D00210FD9 /* ImagePickerHelper.swift */; };
 		D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,12 @@
 		D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTVC.swift; sourceTree = "<group>"; };
 		D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
 		D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2ECB6971F8E2CC500210FD9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D2ECB6991F8E2E8D00210FD9 /* FIRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
+		D2ECB69B1F8E33A100210FD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2ECB69E1F8E543C00210FD9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		D2ECB6A01F8E589900210FD9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		D2ECB6A21F8E633D00210FD9 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		D2F4694E1F87F5CD0034D20B /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				D250B05A1F87A3AD006B7E1F /* Product.swift */,
+				D2ECB6991F8E2E8D00210FD9 /* FIRImage.swift */,
+				D2ECB69B1F8E33A100210FD9 /* User.swift */,
+				D2ECB6A21F8E633D00210FD9 /* ImagePickerHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +118,7 @@
 				D2AF3DEF1F89048E001C6303 /* Shopping Bag Cell */,
 				D2F469501F87F5E10034D20B /* Detail Cell */,
 				D250B0661F87D0FC006B7E1F /* Feed Cell */,
+				D2ECB6A01F8E589900210FD9 /* RoundButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +189,7 @@
 		D2DA2CFE1F862DA8002BD269 /* Nike-Retail */ = {
 			isa = PBXGroup;
 			children = (
+				D2ECB6941F8E290F00210FD9 /* Services */,
 				D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */,
 				D250B0591F87A394006B7E1F /* Model */,
 				D250B05F1F87B632006B7E1F /* View */,
@@ -189,6 +206,7 @@
 		D2DA2D111F86346B002BD269 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2ECB69D1F8E540E00210FD9 /* User Auth */,
 				D2AF3DEC1F8902F0001C6303 /* SHOPPING BAG */,
 				D250B0691F87E3DD006B7E1F /* DETAIL */,
 				D2DA2D121F86347E002BD269 /* FEED */,
@@ -218,6 +236,22 @@
 				D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */,
 			);
 			path = "Checkout Cell";
+			sourceTree = "<group>";
+		};
+		D2ECB6941F8E290F00210FD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2ECB6971F8E2CC500210FD9 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D2ECB69D1F8E540E00210FD9 /* User Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D2ECB69E1F8E543C00210FD9 /* SignupViewController.swift */,
+			);
+			path = "User Auth";
 			sourceTree = "<group>";
 		};
 		D2F469501F87F5E10034D20B /* Detail Cell */ = {
@@ -360,14 +394,20 @@
 				D250B0631F87D068006B7E1F /* ProductDetailCell.swift in Sources */,
 				D2DBC6C41F89496400E915BD /* CreditCardInformationCell.swift in Sources */,
 				D2AF3DE91F88EC43001C6303 /* SuggestionCollectionViewCell.swift in Sources */,
+				D2ECB6A11F8E589900210FD9 /* RoundButton.swift in Sources */,
 				D2DA2D001F862DA8002BD269 /* AppDelegate.swift in Sources */,
 				D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */,
 				D2AF3DEB1F88EE33001C6303 /* SuggestionTableCell.swift in Sources */,
 				D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */,
+				D2ECB6A31F8E633D00210FD9 /* ImagePickerHelper.swift in Sources */,
+				D2ECB69C1F8E33A100210FD9 /* User.swift in Sources */,
 				D250B06B1F87E425006B7E1F /* ProductImageVC.swift in Sources */,
+				D2ECB6981F8E2CC500210FD9 /* DataService.swift in Sources */,
 				D250B06D1F87E50B006B7E1F /* ProductImagesPageVC.swift in Sources */,
 				D250B0681F87D333006B7E1F /* ProductDetailTVC.swift in Sources */,
+				D2ECB69A1F8E2E8D00210FD9 /* FIRImage.swift in Sources */,
 				D2AF3DEE1F890332001C6303 /* ShoppingBagTVC.swift in Sources */,
+				D2ECB69F1F8E543C00210FD9 /* SignupViewController.swift in Sources */,
 				D2AF3DF31F8906B3001C6303 /* ShoppingCartItemCell.swift in Sources */,
 				D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */,
 				D250B0651F87D085006B7E1F /* BuyButtonCell.swift in Sources */,
@@ -513,6 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2HSE9ANL8;
 				INFOPLIST_FILE = "Nike-Retail/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sagar.Nike-Retail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2HSE9ANL8;
 				INFOPLIST_FILE = "Nike-Retail/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sagar.Nike-Retail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
