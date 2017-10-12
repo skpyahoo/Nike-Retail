@@ -18,6 +18,7 @@ override func layoutSubviews() {
     layer.masksToBounds = true
     layer.borderColor = UIColor.white.cgColor
     layer.borderWidth = 3
+    
 }
 
 

@@ -23,11 +23,21 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        do {
+//            try Auth.auth().signOut()
+//
+//        }
+//        catch let signOutErr {
+//
+//            print("Failed to signOut", signOutErr)
+//
+//        }
+        
         if Auth.auth().currentUser == nil
         {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
-                
+
             }
             return
         }

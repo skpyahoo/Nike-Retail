@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignupViewController: UIViewController {
 
@@ -31,6 +32,53 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createNewAccountPressed(_ sender: Any) {
+        
+        guard let email = emailTextField.text,email.characters.count > 0 else {return}
+        guard let username = usernameTextField.text,username.characters.count > 0 else {return}
+        guard let fullname = fullNameTextField.text,fullname.characters.count > 0 else {return}
+        guard let profileImage = profileImage else {return}
+        guard let password = passwordTextField.text,password.characters.count > 0 else {return}
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, err) in
+            
+            if let err = err
+            {
+                print("Can't create a user",err)
+                return
+            }
+            guard let uid = user?.uid else {return}
+            
+            let newUser = User(uid: uid, username: username, fullName: fullname, profileImage: profileImage, email: email)
+            
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, err) in
+                if let err = err
+                {
+                    print("Failed to Autheticate the new user",err)
+                    return
+                }
+                newUser.save(completion: { (err) in
+                    
+                    if let err = err
+                    {
+                        print("Error in saving new user",err)
+                        return
+                    }
+                    else
+                    {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+                
+            })
+            
+            
+            
+            
+            
+            
+        }
+        
+        
     }
     
     @IBAction func changeProfileImageBtnDidTap(_ sender: Any) {
@@ -50,7 +98,7 @@ class SignupViewController: UIViewController {
         
         let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 &&
             usernameTextField.text?.characters.count ?? 0 > 0 &&
-            passwordTextField.text?.characters.count ?? 0 > 0 &&
+            passwordTextField.text?.characters.count ?? 0 > 5 &&
             fullNameTextField.text?.characters.count ?? 0 > 0
         
         if isFormValid {

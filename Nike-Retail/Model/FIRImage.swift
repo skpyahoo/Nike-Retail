@@ -12,7 +12,7 @@ import Firebase
 class FIRImage
 {
     var image: UIImage
-    var downloadURL: URL?
+    //var downloadURL: URL?
     var downloadURLString: String!
     var ref: StorageReference!
     
@@ -20,7 +20,7 @@ class FIRImage
         self.image = image
     }
     
-    func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void) {
+    func saveProfileImage(_ userUID: String, _ completion: @escaping (String?, Error?) -> (Void)) {
         
         let resizedImage = image.resize()
          if let imageData = UIImageJPEGRepresentation(resizedImage, 0.9)
@@ -40,6 +40,13 @@ class FIRImage
                 }
                 
                 print("Successfully Uploade profile image to the Storage")
+                if let metaData = metaData
+                {
+                    self.downloadURLString = metaData.downloadURL()?.absoluteString
+                    completion(self.downloadURLString, err)
+                    
+                }
+                
                 
             })
             

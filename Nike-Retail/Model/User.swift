@@ -37,22 +37,27 @@ class User
     func save(completion: @escaping (Error?) -> Void) {
         
         let ref = DataService.ds.ROOT_USER.child(uid)
-        ref.setValue(toDictionary())
         
-        if let profileImage = self.profileImage,profileImage != #imageLiteral(resourceName: "icon-defaultAvatar")
+        if let profileImage = self.profileImage //,profileImage != #imageLiteral(resourceName: "icon-defaultAvatar")
         {
             let firImage = FIRImage(image: profileImage)
-            firImage.saveProfileImage(uid, { (err) in
+            firImage.saveProfileImage(uid, { imageUrl, err  in
                 
-                if let err = err
+                if let imageUrl = imageUrl
                 {
-                    print("Failed to upload the image",err)
+                    print("Image URL:", imageUrl)
+                    self.profileImageUrl = imageUrl
+                    ref.setValue(self.toDictionary())
                 }
                 print("Successfully uploaded the image")
+                
                 completion(err)
+                
                 
             })
         }
+        
+        
         
         
     }
@@ -62,7 +67,8 @@ class User
         return ["uid": uid,
                 "username": username,
                 "fullName": fullName,
-                "email": email
+                "email": email,
+                "profileImageUrl": profileImageUrl!
         ]
         
     }
