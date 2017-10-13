@@ -17,6 +17,7 @@ class SignupViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var fullNameTextField: UITextField!
     @IBOutlet var createNewAccountButton: UIButton!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var imagePickerHelper: ImagePickerHelper!
     var profileImage: UIImage!
@@ -27,6 +28,7 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
         createNewAccountButton.isEnabled = false
         createNewAccountButton.alpha = 0.2
+        activityIndicator.alpha = 0.0
         
         
     }
@@ -39,11 +41,16 @@ class SignupViewController: UIViewController {
         guard let profileImage = profileImage else {return}
         guard let password = passwordTextField.text,password.characters.count > 0 else {return}
         
+        activityIndicator.alpha = 1.0
+        activityIndicator.startAnimating()
+        
         Auth.auth().createUser(withEmail: email, password: password) { (user, err) in
             
             if let err = err
             {
                 print("Can't create a user",err)
+                
+                self.activityIndicator.stopAnimating()
                 return
             }
             guard let uid = user?.uid else {return}
@@ -54,6 +61,7 @@ class SignupViewController: UIViewController {
                 if let err = err
                 {
                     print("Failed to Autheticate the new user",err)
+                    self.activityIndicator.stopAnimating()
                     return
                 }
                 newUser.save(completion: { (err) in
@@ -61,10 +69,12 @@ class SignupViewController: UIViewController {
                     if let err = err
                     {
                         print("Error in saving new user",err)
+                        self.activityIndicator.stopAnimating()
                         return
                     }
                     else
                     {
+                        self.activityIndicator.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
                     }
                 })
@@ -79,6 +89,11 @@ class SignupViewController: UIViewController {
         }
         
         
+    }
+    
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changeProfileImageBtnDidTap(_ sender: Any) {

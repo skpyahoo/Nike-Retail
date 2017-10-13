@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F2CD01D9F9F0D049D8C6FD7 /* Pods_Nike_Retail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */; };
+		D2034C5A1F906F0900E895CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2034C591F906F0900E895CB /* WelcomeViewController.swift */; };
+		D2034C5C1F90AA8800E895CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2034C5B1F90AA8800E895CB /* LoginViewController.swift */; };
 		D250B05B1F87A3AD006B7E1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05A1F87A3AD006B7E1F /* Product.swift */; };
 		D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */; };
 		D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B0601F87B66D006B7E1F /* FeedProductCell.swift */; };
@@ -41,6 +43,8 @@
 		30EAB3A9A8314B701F9D1566 /* Pods-Nike-Retail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nike-Retail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail.debug.xcconfig"; sourceTree = "<group>"; };
 		A71EADA5982CD82C3050062B /* Pods-Nike-Retail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nike-Retail.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail.release.xcconfig"; sourceTree = "<group>"; };
 		BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nike_Retail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2034C591F906F0900E895CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D2034C5B1F90AA8800E895CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D250B05A1F87A3AD006B7E1F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		D250B0601F87B66D006B7E1F /* FeedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductCell.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				D2ECB69E1F8E543C00210FD9 /* SignupViewController.swift */,
+				D2034C591F906F0900E895CB /* WelcomeViewController.swift */,
+				D2034C5B1F90AA8800E895CB /* LoginViewController.swift */,
 			);
 			path = "User Auth";
 			sourceTree = "<group>";
@@ -399,9 +405,11 @@
 				D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */,
 				D2AF3DEB1F88EE33001C6303 /* SuggestionTableCell.swift in Sources */,
 				D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */,
+				D2034C5A1F906F0900E895CB /* WelcomeViewController.swift in Sources */,
 				D2ECB6A31F8E633D00210FD9 /* ImagePickerHelper.swift in Sources */,
 				D2ECB69C1F8E33A100210FD9 /* User.swift in Sources */,
 				D250B06B1F87E425006B7E1F /* ProductImageVC.swift in Sources */,
+				D2034C5C1F90AA8800E895CB /* LoginViewController.swift in Sources */,
 				D2ECB6981F8E2CC500210FD9 /* DataService.swift in Sources */,
 				D250B06D1F87E50B006B7E1F /* ProductImagesPageVC.swift in Sources */,
 				D250B0681F87D333006B7E1F /* ProductDetailTVC.swift in Sources */,

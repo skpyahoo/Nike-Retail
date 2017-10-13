@@ -33,14 +33,7 @@ class FeedTableViewController: UITableViewController {
 //
 //        }
         
-        if Auth.auth().currentUser == nil
-        {
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
 
-            }
-            return
-        }
         
         navigationItem.title = "FEED"
         fetchProducts()

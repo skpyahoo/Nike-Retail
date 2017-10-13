@@ -349,10 +349,10 @@
             </objects>
             <point key="canvasLocation" x="2362.4000000000001" y="-1204.047976011994"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="Kdp-3r-AMa">
             <objects>
-                <viewController id="OvF-gu-C7S" sceneMemberID="viewController">
+                <viewController id="OvF-gu-C7S" customClass="WelcomeViewController" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hz9-VK-W8y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,7 +370,7 @@
                                             <constraint firstAttribute="width" constant="110" id="yuP-Ex-f4W"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Women's Fashionista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-vV-z9N">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Women's Fashionista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-vV-z9N">
                                         <rect key="frame" x="22" y="218" width="331.5" height="47"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="39"/>
                                         <color key="textColor" red="1" green="0.013539426537607313" blue="0.063664702865405598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -473,7 +473,7 @@
         <!--Login-->
         <scene sceneID="fjf-l5-zc3">
             <objects>
-                <viewController id="S1D-jG-L8e" sceneMemberID="viewController">
+                <viewController id="S1D-jG-L8e" customClass="LoginViewController" customModule="Nike_Retail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lVe-Lq-n1C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -505,6 +505,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <connections>
+                                                            <action selector="isFormValid:" destination="S1D-jG-L8e" eventType="editingChanged" id="hBN-HW-iAt"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -533,6 +536,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <action selector="isFormValid:" destination="S1D-jG-L8e" eventType="editingChanged" id="cFw-5f-rId"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -550,7 +556,14 @@
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="S1D-jG-L8e" eventType="touchUpInside" id="Mrc-6V-JwB"/>
+                                                </connections>
                                             </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="81B-tK-AtR">
+                                                <rect key="frame" x="169" y="91.5" width="37" height="37"/>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.74189006980000005" green="0.74189006980000005" blue="0.74189006980000005" alpha="0.74183968320000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -559,11 +572,13 @@
                                             <constraint firstAttribute="height" constant="220" id="BXP-U3-8Pj"/>
                                             <constraint firstItem="J0M-44-zfW" firstAttribute="leading" secondItem="GdZ-cW-A8C" secondAttribute="leading" id="FQn-SF-RFv"/>
                                             <constraint firstAttribute="trailing" secondItem="J0M-44-zfW" secondAttribute="trailing" id="RYw-1y-m5Y"/>
+                                            <constraint firstItem="81B-tK-AtR" firstAttribute="centerY" secondItem="GdZ-cW-A8C" secondAttribute="centerY" id="Z4T-2d-vV9"/>
                                             <constraint firstItem="rdk-hw-P0m" firstAttribute="top" secondItem="yGi-w2-vlD" secondAttribute="bottom" constant="8" id="bdC-VH-Kjt"/>
                                             <constraint firstAttribute="bottom" secondItem="J0M-44-zfW" secondAttribute="bottom" constant="12" id="bps-do-ACG"/>
                                             <constraint firstAttribute="trailing" secondItem="yGi-w2-vlD" secondAttribute="trailing" constant="20" id="ev6-Pu-iM0"/>
                                             <constraint firstItem="yGi-w2-vlD" firstAttribute="leading" secondItem="GdZ-cW-A8C" secondAttribute="leading" constant="20" id="m5D-Dc-NIB"/>
                                             <constraint firstItem="rdk-hw-P0m" firstAttribute="leading" secondItem="GdZ-cW-A8C" secondAttribute="leading" constant="20" id="n30-D2-4pw"/>
+                                            <constraint firstItem="81B-tK-AtR" firstAttribute="centerX" secondItem="GdZ-cW-A8C" secondAttribute="centerX" id="x1a-1W-l1L"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vli-fp-hzk">
@@ -601,8 +616,18 @@
                         <viewLayoutGuide key="safeArea" id="PGY-wS-fPR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="jC2-F8-58x">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon-back" id="TaX-f7-Wcd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon-back" id="TaX-f7-Wcd">
+                            <connections>
+                                <action selector="backBtnPressed:" destination="S1D-jG-L8e" id="fa5-Bi-OZY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="81B-tK-AtR" id="Urd-Im-cEQ"/>
+                        <outlet property="emailTextField" destination="Gzs-Tp-SPQ" id="HpH-ne-FY9"/>
+                        <outlet property="loginButton" destination="J0M-44-zfW" id="DPn-bI-xYg"/>
+                        <outlet property="passwordTextField" destination="O8c-TA-LkC" id="Qrh-tu-yDj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZI-lz-y2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -769,12 +794,21 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Fpj-Dj-E9g">
+                                                <rect key="frame" x="172" y="212.5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="6LA-Q5-pR9"/>
+                                                    <constraint firstAttribute="width" constant="30" id="Rh4-e3-6Co"/>
+                                                </constraints>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.74189006979695438" green="0.74189006979695438" blue="0.74189006979695438" alpha="0.74183968321917804" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="5Yd-mn-HJu" firstAttribute="leading" secondItem="kIe-9X-ZH4" secondAttribute="leading" id="1kX-pL-jEj"/>
                                             <constraint firstItem="ca6-sd-tz5" firstAttribute="leading" secondItem="kIe-9X-ZH4" secondAttribute="leading" constant="20" id="3nv-dH-7ia"/>
                                             <constraint firstItem="UEi-wa-hIt" firstAttribute="centerX" secondItem="kIe-9X-ZH4" secondAttribute="centerX" id="7Tc-wG-Wz6"/>
+                                            <constraint firstItem="Fpj-Dj-E9g" firstAttribute="centerX" secondItem="kIe-9X-ZH4" secondAttribute="centerX" id="BqQ-4w-MX8"/>
                                             <constraint firstItem="ca6-sd-tz5" firstAttribute="top" secondItem="AFT-6i-nEO" secondAttribute="bottom" constant="8" id="CLB-i3-d6V"/>
                                             <constraint firstItem="0Ys-v8-Bbc" firstAttribute="leading" secondItem="kIe-9X-ZH4" secondAttribute="leading" constant="12" id="FNG-tg-WHm"/>
                                             <constraint firstAttribute="trailing" secondItem="5Yd-mn-HJu" secondAttribute="trailing" id="Goi-93-zwY"/>
@@ -784,6 +818,7 @@
                                             <constraint firstAttribute="trailing" secondItem="pzW-Oq-LpN" secondAttribute="trailing" constant="20" id="Ui9-iy-qUL"/>
                                             <constraint firstAttribute="bottom" secondItem="5Yd-mn-HJu" secondAttribute="bottom" constant="10" id="Uq3-GT-MOr"/>
                                             <constraint firstItem="pzW-Oq-LpN" firstAttribute="leading" secondItem="kIe-9X-ZH4" secondAttribute="leading" constant="20" id="YYA-fX-kJL"/>
+                                            <constraint firstItem="Fpj-Dj-E9g" firstAttribute="centerY" secondItem="kIe-9X-ZH4" secondAttribute="centerY" id="YzF-58-hf4"/>
                                             <constraint firstItem="AFT-6i-nEO" firstAttribute="leading" secondItem="kIe-9X-ZH4" secondAttribute="leading" constant="20" id="eNW-A6-asK"/>
                                             <constraint firstItem="A3D-Yh-PYc" firstAttribute="top" secondItem="0Ys-v8-Bbc" secondAttribute="bottom" constant="8" id="ejO-U5-2HV"/>
                                             <constraint firstItem="AFT-6i-nEO" firstAttribute="top" secondItem="kIe-9X-ZH4" secondAttribute="top" constant="95" id="jR7-OJ-ZbE"/>
@@ -828,9 +863,14 @@
                         <viewLayoutGuide key="safeArea" id="HXE-1J-wQi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Account" id="RYD-iq-gx4">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon-back" id="tlY-xo-JSu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon-back" id="tlY-xo-JSu">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="aU8-lA-t7N" id="dRm-l0-UQS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Fpj-Dj-E9g" id="qcQ-Xk-UUB"/>
                         <outlet property="createNewAccountButton" destination="5Yd-mn-HJu" id="n6g-01-BA9"/>
                         <outlet property="emailTextField" destination="JLB-DY-iCs" id="3YP-eI-bRi"/>
                         <outlet property="fullNameTextField" destination="uha-G7-2dU" id="C3a-6Q-tlM"/>
