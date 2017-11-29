@@ -47,5 +47,10 @@
 	<string>We would like use your camera to capture your profile picture.!!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We would like to take your best picture for your profile!!!</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -24,7 +24,7 @@ class CheckoutTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.estimatedRowHeight = 70.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 

@@ -10,6 +10,8 @@
 		0F2CD01D9F9F0D049D8C6FD7 /* Pods_Nike_Retail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */; };
 		D2034C5A1F906F0900E895CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2034C591F906F0900E895CB /* WelcomeViewController.swift */; };
 		D2034C5C1F90AA8800E895CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2034C5B1F90AA8800E895CB /* LoginViewController.swift */; };
+		D20EC47D1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EC47C1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift */; };
+		D20EC4801FCEDA0B00AD7AFF /* ProductUploaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EC47F1FCEDA0B00AD7AFF /* ProductUploaderCell.swift */; };
 		D250B05B1F87A3AD006B7E1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05A1F87A3AD006B7E1F /* Product.swift */; };
 		D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */; };
 		D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D250B0601F87B66D006B7E1F /* FeedProductCell.swift */; };
@@ -45,6 +47,8 @@
 		BDB4B838591B6151F4D0FB3B /* Pods_Nike_Retail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nike_Retail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2034C591F906F0900E895CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D2034C5B1F90AA8800E895CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D20EC47C1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductUploaderTableVC.swift; sourceTree = "<group>"; };
+		D20EC47F1FCEDA0B00AD7AFF /* ProductUploaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUploaderCell.swift; sourceTree = "<group>"; };
 		D250B05A1F87A3AD006B7E1F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D250B05C1F87B486006B7E1F /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		D250B0601F87B66D006B7E1F /* FeedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductCell.swift; sourceTree = "<group>"; };
@@ -105,6 +109,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D20EC47B1FCED93300AD7AFF /* ADMIN */ = {
+			isa = PBXGroup;
+			children = (
+				D20EC47C1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift */,
+			);
+			path = ADMIN;
+			sourceTree = "<group>";
+		};
+		D20EC47E1FCED9A200AD7AFF /* Admin Product Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D20EC47F1FCEDA0B00AD7AFF /* ProductUploaderCell.swift */,
+			);
+			path = "Admin Product Cell";
+			sourceTree = "<group>";
+		};
 		D250B0591F87A394006B7E1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +139,7 @@
 		D250B05F1F87B632006B7E1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D20EC47E1FCED9A200AD7AFF /* Admin Product Cell */,
 				D2AF3DEF1F89048E001C6303 /* Shopping Bag Cell */,
 				D2F469501F87F5E10034D20B /* Detail Cell */,
 				D250B0661F87D0FC006B7E1F /* Feed Cell */,
@@ -210,6 +231,7 @@
 		D2DA2D111F86346B002BD269 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D20EC47B1FCED93300AD7AFF /* ADMIN */,
 				D2ECB69D1F8E540E00210FD9 /* User Auth */,
 				D2AF3DEC1F8902F0001C6303 /* SHOPPING BAG */,
 				D250B0691F87E3DD006B7E1F /* DETAIL */,
@@ -411,8 +433,10 @@
 				D250B06B1F87E425006B7E1F /* ProductImageVC.swift in Sources */,
 				D2034C5C1F90AA8800E895CB /* LoginViewController.swift in Sources */,
 				D2ECB6981F8E2CC500210FD9 /* DataService.swift in Sources */,
+				D20EC4801FCEDA0B00AD7AFF /* ProductUploaderCell.swift in Sources */,
 				D250B06D1F87E50B006B7E1F /* ProductImagesPageVC.swift in Sources */,
 				D250B0681F87D333006B7E1F /* ProductDetailTVC.swift in Sources */,
+				D20EC47D1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift in Sources */,
 				D2ECB69A1F8E2E8D00210FD9 /* FIRImage.swift in Sources */,
 				D2AF3DEE1F890332001C6303 /* ShoppingBagTVC.swift in Sources */,
 				D2ECB69F1F8E543C00210FD9 /* SignupViewController.swift in Sources */,
@@ -563,6 +587,7 @@
 				INFOPLIST_FILE = "Nike-Retail/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "sagar.Nike-Retail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -580,6 +605,7 @@
 				INFOPLIST_FILE = "Nike-Retail/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "sagar.Nike-Retail";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

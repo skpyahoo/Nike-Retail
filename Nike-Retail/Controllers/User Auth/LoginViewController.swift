@@ -23,13 +23,16 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         loginButton.alpha = 0.2
         activityIndicator.alpha = 0.0
+        emailTextField.becomeFirstResponder()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     
     @IBAction func isFormValid(_ sender: Any) {
         
-        let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 &&
-            passwordTextField.text?.characters.count ?? 0 > 5
+        let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
+            passwordTextField.text?.count ?? 0 > 5
         
         
         if isFormValid {
@@ -45,6 +48,13 @@ class LoginViewController: UIViewController {
         
     }
     
+    func alert(title: String, message: String, buttonTitle: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttonTitle, style: .default, handler: nil)
+        alertVC.addAction(action)
+        present(alertVC, animated: true, completion: nil)
+    }
+    
     
     @IBAction func backBtnPressed(_ sender: Any) {
         
@@ -53,8 +63,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         
-        guard let email = emailTextField.text,email.characters.count > 0 else {return}
-        guard let password = passwordTextField.text,password.characters.count > 0 else {return}
+        guard let email = emailTextField.text,email.count > 0 else {return}
+        guard let password = passwordTextField.text,password.count > 0 else {return}
         
         activityIndicator.alpha = 1.0
         activityIndicator.startAnimating()
@@ -64,6 +74,7 @@ class LoginViewController: UIViewController {
             {
                 print("Failed to Autheticate the new user",err)
                 self.activityIndicator.stopAnimating()
+                self.alert(title: "Oops!", message: err.localizedDescription, buttonTitle: "OK")
                 return
             }
             print("Successfully Signed in")
@@ -74,3 +85,20 @@ class LoginViewController: UIViewController {
         
     }
 }
+
+
+extension LoginViewController : UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+            loginButtonPressed(AnyObject.self)
+        }
+        
+        return true
+    }
+}
+

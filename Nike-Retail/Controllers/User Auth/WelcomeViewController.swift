@@ -21,11 +21,12 @@ class WelcomeViewController: UIViewController {
         
         super.viewDidAppear(animated)
         
+        
         if Auth.auth().currentUser != nil
         {
             DispatchQueue.main.async {
                 self.dismiss(animated: false, completion: nil)
-                
+
             }
             return
         }

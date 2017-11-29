@@ -33,12 +33,24 @@ class FeedTableViewController: UITableViewController {
 //
 //        }
         
+        
+//        if Auth.auth().currentUser == nil
+//        {
+//            DispatchQueue.main.async {
+//                self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+//
+//            }
+//            return
+//
+//           // self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+//        }
+        
 
         
         navigationItem.title = "FEED"
         fetchProducts()
         
-        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.estimatedRowHeight = 444.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
     }
@@ -51,7 +63,7 @@ class FeedTableViewController: UITableViewController {
         {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showWelcomeVC", sender: nil)
-                
+
             }
             return
         }
@@ -117,6 +129,20 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-
-    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 0 {
+//            return UITableViewAutomaticDimension
+//        } else {
+//            return 40
+//        }
+//    }
+//
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 0 {
+//            return UITableViewAutomaticDimension
+//        } else {
+//            return 40
+//        }
+//
+//    }
 }

@@ -30,16 +30,20 @@ class SignupViewController: UIViewController {
         createNewAccountButton.alpha = 0.2
         activityIndicator.alpha = 0.0
         
+        emailTextField.delegate = self
+        fullNameTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
         
     }
 
     @IBAction func createNewAccountPressed(_ sender: Any) {
         
-        guard let email = emailTextField.text,email.characters.count > 0 else {return}
-        guard let username = usernameTextField.text,username.characters.count > 0 else {return}
-        guard let fullname = fullNameTextField.text,fullname.characters.count > 0 else {return}
+        guard let email = emailTextField.text,email.count > 0 else {return}
+        guard let username = usernameTextField.text,username.count > 0 else {return}
+        guard let fullname = fullNameTextField.text,fullname.count > 0 else {return}
         guard let profileImage = profileImage else {return}
-        guard let password = passwordTextField.text,password.characters.count > 0 else {return}
+        guard let password = passwordTextField.text,password.count > 0 else {return}
         
         activityIndicator.alpha = 1.0
         activityIndicator.startAnimating()
@@ -111,10 +115,10 @@ class SignupViewController: UIViewController {
     @IBAction func isFormvalid(_ sender: Any) {
         
         
-        let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 &&
-            usernameTextField.text?.characters.count ?? 0 > 0 &&
-            passwordTextField.text?.characters.count ?? 0 > 5 &&
-            fullNameTextField.text?.characters.count ?? 0 > 0
+        let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
+            usernameTextField.text?.count ?? 0 > 0 &&
+            passwordTextField.text?.count ?? 0 > 5 &&
+            fullNameTextField.text?.count ?? 0 > 0
         
         if isFormValid {
             createNewAccountButton.isEnabled = true
@@ -128,4 +132,23 @@ class SignupViewController: UIViewController {
         }
     }
     
+}
+
+
+extension SignupViewController : UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            fullNameTextField.becomeFirstResponder()
+        } else if textField == fullNameTextField {
+            usernameTextField.becomeFirstResponder()
+        } else if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+            createNewAccountPressed(AnyObject.self)
+        }
+        
+        return true
+    }
 }
