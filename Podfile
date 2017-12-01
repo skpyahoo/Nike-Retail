@@ -12,6 +12,7 @@ target 'Nike-Retail' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'DKImagePickerController'
 
 
 end

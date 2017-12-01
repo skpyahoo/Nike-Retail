@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ProductUploaderCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet var uploadedImage: UIImageView!
@@ -16,6 +18,8 @@ class ProductUploaderCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet var productName: UILabel!
     
     var pickerData: [String] = [String]()
+    var isFormValid = false
+    var selectedPickerValue: String?
     
     
     override func awakeFromNib() {
@@ -23,12 +27,21 @@ class ProductUploaderCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDa
         // Initialization code
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
-
+        productNameTxtField.delegate = self
+        
         pickerData = ["Purses", "Bangales", "Jewellry", "Accessories"]
-    
-    
+        
+        
     }
-
+    
+    
+    
+    @IBAction func isProdNamePresent(_ sender: Any) {
+        
+         isFormValid = productNameTxtField.text?.count ?? 0 > 3
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -49,5 +62,22 @@ class ProductUploaderCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDa
         
         return pickerData[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedPickerValue = pickerData[row] as String
+    }
 
+}
+
+extension ProductUploaderCell : UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+         if textField == productNameTxtField {
+            productNameTxtField.resignFirstResponder()
+        }
+        
+        return true
+    }
 }

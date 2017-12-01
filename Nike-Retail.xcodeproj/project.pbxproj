@@ -31,6 +31,10 @@
 		D2DA2D0A1F862DA8002BD269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA2D081F862DA8002BD269 /* LaunchScreen.storyboard */; };
 		D2DBC6C11F89491500E915BD /* CheckoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */; };
 		D2DBC6C41F89496400E915BD /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */; };
+		D2DD03271FD11CAE0052DA74 /* AdminProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD03261FD11CAE0052DA74 /* AdminProductImagesHeaderView.swift */; };
+		D2DD03291FD11D770052DA74 /* AdminSaveUploaderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD03281FD11D770052DA74 /* AdminSaveUploaderTableVC.swift */; };
+		D2DD032B1FD11E5D0052DA74 /* AdminPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD032A1FD11E5D0052DA74 /* AdminPageVC.swift */; };
+		D2DD032D1FD120820052DA74 /* AdminProductImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD032C1FD120820052DA74 /* AdminProductImageVC.swift */; };
 		D2E2527D1F8A5A6200F4A139 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */; };
 		D2ECB6981F8E2CC500210FD9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6971F8E2CC500210FD9 /* DataService.swift */; };
 		D2ECB69A1F8E2E8D00210FD9 /* FIRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECB6991F8E2E8D00210FD9 /* FIRImage.swift */; };
@@ -70,6 +74,10 @@
 		D2DA2D0B1F862DA8002BD269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2DBC6C01F89491500E915BD /* CheckoutTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTVC.swift; sourceTree = "<group>"; };
 		D2DBC6C31F89496400E915BD /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
+		D2DD03261FD11CAE0052DA74 /* AdminProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductImagesHeaderView.swift; sourceTree = "<group>"; };
+		D2DD03281FD11D770052DA74 /* AdminSaveUploaderTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSaveUploaderTableVC.swift; sourceTree = "<group>"; };
+		D2DD032A1FD11E5D0052DA74 /* AdminPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPageVC.swift; sourceTree = "<group>"; };
+		D2DD032C1FD120820052DA74 /* AdminProductImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductImageVC.swift; sourceTree = "<group>"; };
 		D2E2527C1F8A5A6200F4A139 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2ECB6971F8E2CC500210FD9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D2ECB6991F8E2E8D00210FD9 /* FIRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
@@ -113,6 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				D20EC47C1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift */,
+				D2DD03281FD11D770052DA74 /* AdminSaveUploaderTableVC.swift */,
+				D2DD032A1FD11E5D0052DA74 /* AdminPageVC.swift */,
+				D2DD032C1FD120820052DA74 /* AdminProductImageVC.swift */,
 			);
 			path = ADMIN;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D20EC47F1FCEDA0B00AD7AFF /* ProductUploaderCell.swift */,
+				D2DD03261FD11CAE0052DA74 /* AdminProductImagesHeaderView.swift */,
 			);
 			path = "Admin Product Cell";
 			sourceTree = "<group>";
@@ -372,13 +384,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nike-Retail-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8E1447194D3A0EAC852AED7 /* [CP] Embed Pods Frameworks */ = {
@@ -387,9 +402,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nike-Retail/Pods-Nike-Retail-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AF3DF11F8904BF001C6303 /* NumberOfItemsCell.swift in Sources */,
+				D2DD03271FD11CAE0052DA74 /* AdminProductImagesHeaderView.swift in Sources */,
 				D250B0631F87D068006B7E1F /* ProductDetailCell.swift in Sources */,
 				D2DBC6C41F89496400E915BD /* CreditCardInformationCell.swift in Sources */,
 				D2AF3DE91F88EC43001C6303 /* SuggestionCollectionViewCell.swift in Sources */,
@@ -426,7 +453,9 @@
 				D2DA2D001F862DA8002BD269 /* AppDelegate.swift in Sources */,
 				D250B0611F87B66D006B7E1F /* FeedProductCell.swift in Sources */,
 				D2AF3DEB1F88EE33001C6303 /* SuggestionTableCell.swift in Sources */,
+				D2DD032D1FD120820052DA74 /* AdminProductImageVC.swift in Sources */,
 				D250B05D1F87B486006B7E1F /* FeedTableViewController.swift in Sources */,
+				D2DD03291FD11D770052DA74 /* AdminSaveUploaderTableVC.swift in Sources */,
 				D2034C5A1F906F0900E895CB /* WelcomeViewController.swift in Sources */,
 				D2ECB6A31F8E633D00210FD9 /* ImagePickerHelper.swift in Sources */,
 				D2ECB69C1F8E33A100210FD9 /* User.swift in Sources */,
@@ -439,6 +468,7 @@
 				D20EC47D1FCED98300AD7AFF /* AdminProductUploaderTableVC.swift in Sources */,
 				D2ECB69A1F8E2E8D00210FD9 /* FIRImage.swift in Sources */,
 				D2AF3DEE1F890332001C6303 /* ShoppingBagTVC.swift in Sources */,
+				D2DD032B1FD11E5D0052DA74 /* AdminPageVC.swift in Sources */,
 				D2ECB69F1F8E543C00210FD9 /* SignupViewController.swift in Sources */,
 				D2AF3DF31F8906B3001C6303 /* ShoppingCartItemCell.swift in Sources */,
 				D2F4694F1F87F5CD0034D20B /* ProductImagesHeaderView.swift in Sources */,
